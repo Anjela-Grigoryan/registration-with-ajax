@@ -1,4 +1,6 @@
 <?php
-echo "hellooooo";
+session_start();
+
+echo "hellooooo" . " " . $_SESSION['email'];
 
 ?>

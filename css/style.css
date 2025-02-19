@@ -320,12 +320,12 @@
 
 
 /* --------- */
+.error {
+  display: flex;
+    justify-content: center;
+}
+
 .p{
     color: red;
    
-}
-
-.p-m {
-    margin-left: 235px;
-    margin-top: 10px;
 }

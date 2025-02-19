@@ -19,7 +19,9 @@
         <span>Password</span>
         <input type="password" name="password" id = "password">
       </label>
-      <p id = "plogin"></p>
+      <div class="error">
+        <p id = "plogin" class="p"></p>
+      </div>
       <button class="submit" id = "signin" type="button">Sign In</button>
     </div>
 
@@ -50,13 +52,17 @@
         </label>
         <label>
           <span>Password</span>
-          <input type="password" id = "pwd">
+          <input type="text" id = "pwd">
         </label>
         <label>
           <span>Confirm Password</span>
           <input type="password" id = "cpwd">
+          <p id = 'error'></p>
         </label>
-        <p id = "p"></p>
+        <div class="error">
+          <p id = "p" class="p"></p>
+        </div>
+        
         <button type="button" id = "signUp" class="submit">Sign Up Now</button>
       </div>
     </div>

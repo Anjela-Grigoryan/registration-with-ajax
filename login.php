@@ -9,7 +9,7 @@ if(!empty($_POST['mail']) && !empty($_POST['pwd'])){
         $row = mysqli_fetch_assoc($result);
         $resultCheck = mysqli_num_rows($result);
         if(password_verify($_POST['pwd'], $row['user_pwd'])){
-            echo "succes";
+            $_SESSION['email'] = $email;
         }else{
             echo "pwdErr";
         }

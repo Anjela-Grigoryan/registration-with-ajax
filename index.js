@@ -4,7 +4,9 @@ document.querySelector('.img-btn').addEventListener('click', function()
 	}
 );
 
+
 $("#signUp").click(function(){
+
     let name = $("#name").val();
     let email = $("#email").val();
     let pwd = $("#pwd").val();
@@ -20,20 +22,22 @@ $("#signUp").click(function(){
         },
         success: function(res){
             if(res === 'error'){
-                $('#p').replaceWith('<p class = "p-m p">fill in all fields</p>');
+                $('#p').text('fill in all fields');
             }else if(res === 'email_err'){
-                $('#p').replaceWith('<p class = "p-m p">Incorrect email</p>');
+                $('#p').text('Incorrect email');
             }else if(res === 'pwdErr'){
-                $("#p").replaceWith('<p class = "p-m p">passwords must be the same</p>')
+                $('#p').text('passwords must be the same');
             }else if(res === 'userErr'){
-                $('#p').replaceWith('<p class = "p-m p">this email already exists</p>');
+                $('#p').text('this email already exists');
+            }else if(res === 'verifyErr'){
+                $('#p').text('The password must contain more than 8 characters, capital letters, lowercase letters, numbers and special characters');
             }else{
-                $('#p').replaceWith('<p class = "p-m">congratilations</p>');
+                $('#p').removeClass('p');
+                window.location = 'wellcome.php';
             }
         }
     })
 })
-
 
 $("#signin").click(function(){
   
@@ -47,13 +51,14 @@ $("#signin").click(function(){
             mail:mail,
             pwd:password
         },
+        
         success: function(res){
             if(res == "error"){
-              $('#plogin').replaceWith('<p class = "p-m p">fill in all fields</p>');
+                $('#plogin').text('fill in all fields');
             }else if(res == "mailErr"){
-              $('#plogin').replaceWith('<p class = "p-m p">Incorrect email</p>');
+                $('#plogin').text('Incorrect email');
             }else if(res == "pwdErr"){
-              $('#plogin').replaceWith('<p class = "p-m p">Invalid password</p>');
+                $('#plogin').text('Invalid password');
             }else{
               window.location = 'wellcome.php';
             }
